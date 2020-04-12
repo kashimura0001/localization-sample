@@ -5,6 +5,7 @@ import ja from './ja.json';
 import en from './en.json';
 
 import * as React from 'react';
+import {ReactNode} from 'react';
 import * as RNLocalize from 'react-native-localize';
 import {includes} from 'lodash';
 import {IntlProvider} from 'react-intl';
@@ -37,7 +38,7 @@ const getLocale = (): string => {
   return DEFAULT_LOCALE;
 };
 
-export const IntlProviderWrapper = ({children}: {children: any}) => {
+export const IntlProviderWrapper = ({children}: {children: ReactNode}) => {
   const locale = getLocale();
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)}>
